@@ -1,0 +1,49 @@
+
+Mission: common tasks in Web development
+------
+
+### About
+
+In this repo are some widely used tasks of Web developments as Grunt plugins.
+Now I trying to use `shelljs/make` with it.
+
+By now it's under development.
+
+The configuration is like:
+
+```coffee
+require 'shelljs/make'
+
+mission = require 'mission'
+
+target.coffee = ->
+  mission.coffee
+    from: 'src/'
+    files: ['a.coffee', 'dir/b.coffee']
+    to: 'lib/'
+    options:
+      bare: yes
+```
+
+And you will probably run it like:
+
+```bash
+./make.coffee coffee
+```
+
+### Notice
+
+Asynchronous callings are hard to handle in ShellJS.
+In this angle, Grunt did a good job in sequencing tasks.
+
+### Development
+
+Compile `*.coffee`:
+
+```
+./make.coffee compile
+```
+
+### License
+
+MIT
