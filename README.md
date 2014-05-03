@@ -31,6 +31,10 @@ And you will probably run it like:
 ./make.coffee coffee
 ```
 
+### Usage
+
+* `tree`: creates file tree
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.

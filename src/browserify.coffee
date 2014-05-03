@@ -7,7 +7,7 @@ exorcist = require 'exorcist'
 
 common = require './common'
 
-exports.target = (opts) ->
+exports.task = (opts) ->
   context = common.expand opts
   count = 0
   for item in context.files
