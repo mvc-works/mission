@@ -18,4 +18,4 @@ exports.task = (opts) ->
     name = item.from
     html = render (cat name), '@filename': name
     common.write item.to, html
-  console.log 'done: converted Cirru files'
+  console.log "done: converted Cirru files in #{context.from}"
