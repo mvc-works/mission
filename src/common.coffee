@@ -14,19 +14,17 @@ exports.expand = (opts) ->
   context =
     files: []
     options: opts.options or {}
+    from: opts.from
+    to: opts.to
+
   files = opts.files or [opts.file]
+
   for file in files
-    from = \
-      if context.from?
-        path.join context.from, file
-      else file
-    to = \
-      if context.to?
-        path.join context.to, file
-      else file
-    if opts.extname?
-      to = to.replace /\.\w+$/, opts.extname
+    from = if context.from? then (path.join context.from, file) else file
+    to = if context.to? then (path.join context.to, file) else file
+    if opts.extname? then to = to.replace /\.\w+$/, opts.extname
     context.files.push {from, to}
+
   context
 
 exports.stringify = (data) ->

@@ -40,6 +40,7 @@ And you will probably run it like:
 There's a bug in `node-semver`. Package will update when it's fixed.
 https://github.com/isaacs/node-semver/pull/66
 
+* `uglify`: minify JavaScript code
 
 ### Notice
 
