@@ -5,12 +5,14 @@ watching = no
 
 handler =
   reload: (query) ->
-    if watching?
+    if watching
       station.reload query
 
 exports.task = ->
   if not watching
     station.start()
-    watching = yes
+    setTimeout ->
+      watching = yes
+    , 4000
 
   handler

@@ -83,6 +83,8 @@ https://github.com/isaacs/node-semver/pull/66
 
 * `time`: log the time it cost
 
+* `realod`: reload tab with `devtools-reloader-station`
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
