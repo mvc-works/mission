@@ -93,6 +93,15 @@ https://github.com/isaacs/node-semver/pull/66
 
 * `jade`: compile Jade to HTML
 
+* `less`: compile LESS to CSS
+
+SourceMap is enabled by default, and here I have to use command line.
+
+And this is more like a bug.
+https://github.com/less/less.js/issues/1985
+
+Anyway, `mission.less` needs to be updated in the future.
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.

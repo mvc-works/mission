@@ -5,10 +5,13 @@ common = require './common'
 
 exports.task = (opts) ->
   context = common.expand opts
+  options = context.options
+
   for item in context.files
-    command = "./node_modules/.bin/lessc #{item.from} #{item.to}"
-    command+= " --source-map=#{toPath}.map"
-    command+= " --source-map-basepath=#{opts.basepath}"
-    command+= " --source-map-rootpath=#{opts.rootpath}"
+    command = "lessc #{item.from} #{item.to}"
+    command+= " --source-map=#{item.to}.map"
+    command+= " --source-map-basepath=#{options.basepath}"
+    command+= " --source-map-rootpath=#{options.rootpath}"
     exec command
-  console.log 'done: compiled less'
+
+  console.log "done: compiled LESS in #{context.from}"
