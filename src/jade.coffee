@@ -9,6 +9,6 @@ exports.task = (opts) ->
   context = common.expand opts
   options = context.options
   for item in context.files
-    html = jade.compile((cat item.from), options) options.data
+    html = jade.compile((cat item.from), options) context.data
     common.write item.to, html
-  console.log 'done: jade'
+  console.log "done: compiled jade files in #{context.from}"

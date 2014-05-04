@@ -91,6 +91,8 @@ https://github.com/isaacs/node-semver/pull/66
 
 * `dot`: precompile dot files to JavaScript
 
+* `jade`: compile Jade to HTML
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.

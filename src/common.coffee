@@ -17,6 +17,7 @@ exports.expand = (opts) ->
     from: opts.from
     to: opts.to
     trigger: opts.trigger
+    data: opts.data
 
   if opts.find?
     files = ls('-R', opts.from).filter (name) ->
