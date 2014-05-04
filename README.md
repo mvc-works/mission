@@ -89,6 +89,8 @@ https://github.com/isaacs/node-semver/pull/66
 
 * `cssmin`: combine CSS files and minify code
 
+* `dot`: precompile dot files to JavaScript
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
