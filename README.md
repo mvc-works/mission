@@ -81,6 +81,8 @@ https://github.com/isaacs/node-semver/pull/66
 
 * `watch`: watch directories, callback `filename`s and `extname`s
 
+* `time`: log the time it cost
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
