@@ -11,4 +11,4 @@ exports.task = (opts) ->
     code = clean.minify(cat item.from)
     common.write item.to, code
 
-  console.log 'done: css minified'
+  console.log "done: minified CSS in #{context.from}"

@@ -87,6 +87,8 @@ https://github.com/isaacs/node-semver/pull/66
 
 * `browserify`: combine JavaScript code on CommonJS
 
+* `cssmin`: combine CSS files and minify code
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
