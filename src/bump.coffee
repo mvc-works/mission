@@ -1,11 +1,22 @@
 
 semver = require 'semver'
 
-exports.task = (opts) ->
-  files = opts.files or [opts.file]
-  for file in files
-    config = JSON.parse (cat file)
-    config.version = semver.inc config.version, opts.at
-  (JSON.stringify bower, null, 2).to file
+common = require './common'
 
-  console.log "done: bumped #{files.join ', '} => #{config.version}"
+exports.task = (opts) ->
+  context = common.expand opts
+
+  oldVersion = undefined
+
+  for item in context.files
+    config = JSON.parse (cat item.from)
+    if oldVersion? and config.version isnt oldVersion
+      console.warn "[Bump]: version not matching, prefer the first..."
+      config.version = oldVersion
+    else oldVersion = config.version
+    console.log config.version, context.options.at
+    config.version = semver.inc config.version, context.options.at
+
+    common.write item.to, (common.stringify config)
+
+  console.log "done: bumped #{opts.files.join ', '} => #{config.version}"

@@ -35,6 +35,12 @@ And you will probably run it like:
 
 * `tree`: creates file tree
 
+* `bump`: bump version for file configs like `package.json`.
+
+There's a bug in `node-semver`. Package will update when it's fixed.
+https://github.com/isaacs/node-semver/pull/66
+
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
