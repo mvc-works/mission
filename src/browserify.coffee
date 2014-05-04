@@ -13,7 +13,11 @@ exports.task = (opts) ->
   for item in context.files
     count += 1
 
-    bundle = browserify([item.from]).bundle debug: yes
+    entry = \
+      if (item.from[0] is '.') then item.from
+      else "./#{item.from}"
+
+    bundle = browserify([entry]).bundle debug: yes
     common.write item.to, ''
 
     bundle
@@ -23,5 +27,5 @@ exports.task = (opts) ->
     bundle.on 'end', ->
       count -= 1
       if count is 0
-        console.log 'done: run browserify on code'
+        console.log "done: run browserify on #{opts.from}"
         opts.done?()

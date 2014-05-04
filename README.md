@@ -85,6 +85,8 @@ https://github.com/isaacs/node-semver/pull/66
 
 * `realod`: reload tab with `devtools-reloader-station`
 
+* `browserify`: combine JavaScript code on CommonJS
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
