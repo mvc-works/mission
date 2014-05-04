@@ -1,6 +1,26 @@
+#!/usr/bin/env coffee
 
 require 'shelljs/make'
 
+mission = require './src'
+
 target.compile = ->
-  exec './node_modules/.bin/coffee -o lib/ -bc src/'
-  console.log 'done: compile coffee'
+  mission.coffee
+    find: /\.coffee$/
+    from: 'src/'
+    to: 'lib/'
+    extname: '.js'
+    options:
+      bare: yes
+
+target.patch = ->
+  mission.bump
+    file: 'package.json'
+    options:
+      at: 'patch'
+
+target.pre = ->
+  mission.bump
+    file: 'package.json'
+    options:
+      at: 'prerelease'

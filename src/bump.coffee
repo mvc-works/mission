@@ -8,6 +8,8 @@ exports.task = (opts) ->
 
   oldVersion = undefined
 
+  bumpedFiles = []
+
   for item in context.files
     config = JSON.parse (cat item.from)
     if oldVersion? and config.version isnt oldVersion
@@ -18,5 +20,6 @@ exports.task = (opts) ->
     config.version = semver.inc config.version, context.options.at
 
     common.write item.to, (common.stringify config)
+    bumpedFiles.push item.from
 
-  console.log "done: bumped #{opts.files.join ', '} => #{config.version}"
+  console.log "done: bumped #{bumpedFiles.join(' ')} => #{config.version}"
