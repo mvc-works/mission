@@ -7,12 +7,6 @@ coffee = require 'coffee-script'
 
 common = require './common'
 
-trimRightSlash = (str) ->
-  if str[str.length - 1] is '/'
-    str[...-1]
-  else
-    str
-
 exports.task = (opts) ->
   context = common.expand opts
 
@@ -20,4 +14,4 @@ exports.task = (opts) ->
     js = coffee.compile (cat item.from), context.options
     common.write item.to, js
 
-  console.log 'done: coffee compiled'
+  console.log "done: compiled coffee files in #{context.from}"

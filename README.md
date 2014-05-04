@@ -31,6 +31,32 @@ And you will probably run it like:
 ./make.coffee coffee
 ```
 
+### Other configurations
+
+Say if you want to compile only one file:
+
+```coffee
+target.coffee = ->
+  mission.coffee
+    file: 'a.coffee'
+    from: 'src/'
+    to: 'lib/'
+    options:
+      bare: yes
+```
+
+Or you may need to find some files that are deep in folders:
+
+```coffee
+target.coffee = ->
+  mission.coffee
+    find: /\.coffee$/
+    from: 'src/'
+    to: 'lib/'
+    options:
+      bare: yes
+```
+
 ### Usage
 
 * `tree`: creates file tree
@@ -41,6 +67,8 @@ There's a bug in `node-semver`. Package will update when it's fixed.
 https://github.com/isaacs/node-semver/pull/66
 
 * `uglify`: minify JavaScript code
+
+* `coffee`: compile CoffeeScript to JavaScript
 
 ### Notice
 

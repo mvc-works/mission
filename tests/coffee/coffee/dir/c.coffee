@@ -1,0 +1,3 @@
+
+c = ->
+  console.log 'c'

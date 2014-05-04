@@ -17,7 +17,11 @@ exports.expand = (opts) ->
     from: opts.from
     to: opts.to
 
-  files = opts.files or [opts.file]
+  if opts.find?
+    files = ls('-R', opts.from).filter (name) ->
+      name.match opts.find
+  else
+    files = opts.files or [opts.file]
 
   for file in files
     from = if context.from? then (path.join context.from, file) else file
