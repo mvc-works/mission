@@ -57,6 +57,15 @@ target.coffee = ->
       bare: yes
 ```
 
+`from` and `to` are optional, you mat only need to write `file` sometimes:
+
+```coffee
+target.coffee = ->
+  mission.watch
+    file: 'dir'
+    trigger: (filename, extname) ->
+```
+
 ### Usage
 
 * `tree`: creates file tree
@@ -69,6 +78,8 @@ https://github.com/isaacs/node-semver/pull/66
 * `uglify`: minify JavaScript code
 
 * `coffee`: compile CoffeeScript to JavaScript
+
+* `watch`: watch directories, callback `filename`s and `extname`s
 
 ### Notice
 

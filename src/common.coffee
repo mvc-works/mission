@@ -16,6 +16,7 @@ exports.expand = (opts) ->
     options: opts.options or {}
     from: opts.from
     to: opts.to
+    trigger: opts.trigger
 
   if opts.find?
     files = ls('-R', opts.from).filter (name) ->
