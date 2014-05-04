@@ -16,7 +16,6 @@ exports.task = (opts) ->
       console.warn "[Bump]: version not matching, prefer the first..."
       config.version = oldVersion
     else oldVersion = config.version
-    console.log config.version, context.options.at
     config.version = semver.inc config.version, context.options.at
 
     common.write item.to, (common.stringify config)

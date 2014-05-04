@@ -13,13 +13,8 @@ target.compile = ->
     options:
       bare: yes
 
-target.patch = ->
-  mission.bump
-    file: 'package.json'
-    options:
-      at: 'patch'
-
 target.pre = ->
+  target.compile()
   mission.bump
     file: 'package.json'
     options:
