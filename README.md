@@ -102,6 +102,8 @@ https://github.com/less/less.js/issues/1985
 
 Anyway, `mission.less` needs to be updated in the future.
 
+* `rsync`: run Rsync with some default configs
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.

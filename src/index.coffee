@@ -37,3 +37,6 @@ exports.uglify = (args...) ->
 
 exports.watch = (args...) ->
   require('./watch').task args...
+
+exports.rsync = (args...) ->
+  require('./rsync').task args...
