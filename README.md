@@ -104,6 +104,8 @@ Anyway, `mission.less` needs to be updated in the future.
 
 * `rsync`: run Rsync with some default configs
 
+* `copy`: copy files and directories
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
