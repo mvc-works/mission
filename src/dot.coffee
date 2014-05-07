@@ -4,9 +4,9 @@ path = require 'path'
 
 common = require './common'
 
-exports.task = (opts) ->
+exports.task = (arg) ->
+  context = common.expand arg
 
-  context = common.expand opts
   for item in context.files
     content = cat item.from
     code = dot.template(content).toString()

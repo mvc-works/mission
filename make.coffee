@@ -19,3 +19,10 @@ target.pre = ->
     file: 'package.json'
     options:
       at: 'prerelease'
+
+target.patch = ->
+  target.compile()
+  mission.bump
+    file: 'package.json'
+    options:
+      at: 'prepatch'

@@ -70,10 +70,7 @@ target.coffee = ->
 
 * `tree`: creates file tree
 
-* `bump`: bump version for file configs like `package.json`.
-
-There's a bug in `node-semver`. Package will update when it's fixed.
-https://github.com/isaacs/node-semver/pull/66
+* `bump`: bump version with `semver`.
 
 * `uglify`: minify JavaScript code
 
