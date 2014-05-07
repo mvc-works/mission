@@ -43,3 +43,6 @@ exports.rsync = (args...) ->
 
 exports.copy = (args...) ->
   require('./copy').task args...
+
+exports.wait = (args...) ->
+  require('./wait').task args...

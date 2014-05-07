@@ -103,6 +103,8 @@ Anyway, `mission.less` needs to be updated in the future.
 
 * `copy`: copy files and directories
 
+* `wait`: wait `chan.done = false` to be `true` and run task
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
