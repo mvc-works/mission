@@ -18,8 +18,14 @@ exports.task = (opts) ->
       extname = path.extname filepath
       context.trigger filepath, extname
 
+    stable = no
+    setTimeout ->
+      stable = yes
+    , 10000
+
     watcher.on 'change', trigger
-    watcher.on 'add', trigger
+    watcher.on 'add', ->
+      if stable then do trigger()
 
   fileFroms = files.map (item) ->
     item.from
