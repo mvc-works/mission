@@ -13,9 +13,13 @@ exports.task = (opts) ->
     watcher = chokidar.watch item.from,
       ignored: /[\/\\]\./
       persistent: true
-    watcher.on 'change', (filepath) ->
+
+    trigger = (filepath) ->
       extname = path.extname filepath
       context.trigger filepath, extname
+
+    watcher.on 'change', trigger
+    watcher.on 'add', trigger
 
   fileFroms = files.map (item) ->
     item.from

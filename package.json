@@ -1,6 +1,6 @@
 {
   "name": "mission",
-  "version": "0.0.1-3",
+  "version": "0.0.1-4",
   "description": "Common used tasks in Web development",
   "main": "lib/index.js",
   "scripts": {
