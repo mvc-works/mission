@@ -18,12 +18,16 @@ exports.expand = (opts) ->
     to: opts.to
     trigger: opts.trigger
     data: opts.data
+    dest: opts.dest
 
   if opts.find?
     files = ls('-R', opts.from).filter (name) ->
       name.match opts.find
   else
     files = opts.files or [opts.file]
+
+  if opts.to? and opts.dest?
+    context.dest = path.join context.to, opts.dest
 
   for file in files
     from = if context.from? then (path.join context.from, file) else file
