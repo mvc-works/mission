@@ -7,11 +7,9 @@ path = require 'path'
 target.build = ->
   mission.dot
     find: /\.html$/
-    from: 'src/'
-    to: 'script/'
+    from: 'html/'
+    to: 'build/'
     dest: 'template.js'
     options:
       rename: (longPath) ->
-        shorter = path.relative 'src/script/views', longPath
-        shorter = shorter.replace(/\//g, '-').replace('-template', '')
-        path.basename shorter, '.html'
+        longPath

@@ -5,6 +5,7 @@ mission = require '../../src/'
 
 target.sync = ->
   mission.rsync
-    file: 'a/'
+    from: './'
+    dest: 'tiye:~/test/'
     options:
-      dest: '192.168.0.21:/home/jarvis/qiniu/'
+      exclude: ['make.coffee']

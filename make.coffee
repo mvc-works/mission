@@ -18,4 +18,4 @@ target.patch = ->
   mission.bump
     file: 'package.json'
     options:
-      at: 'prepatch'
+      at: 'patch'

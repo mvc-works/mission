@@ -20,11 +20,16 @@ exports.expand = (opts) ->
     data: opts.data
     dest: opts.dest
 
-  if opts.find?
-    files = ls('-R', opts.from).filter (name) ->
-      name.match opts.find
-  else
-    files = opts.files or [opts.file]
+  files = switch
+    when opts.find?
+      ls('-R', opts.from).filter (name) ->
+        name.match opts.find
+    when opts.files?
+      opts.files
+    when opts.file?
+      [opts.file]
+    else
+      files = []
 
   if opts.to? and opts.dest?
     context.dest = path.join context.to, opts.dest
