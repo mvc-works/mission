@@ -2,16 +2,18 @@
 Mission: common tasks in Web development
 ------
 
-### About
+Bundled tasks for developing single page apps.
 
-In this repo are some widely used tasks of Web developments as Grunt plugins.
-Now I trying to use `shelljs/make` with it.
+### Usage
 
-By now it's under development.
+```bash
+npm install --save-dev mission shelljs
+```
 
-The configuration is like:
+Config in CoffeeScript or JavaScript:
 
 ```coffee
+#!/usr/bin/env coffee
 require 'shelljs/make'
 
 mission = require 'mission'
@@ -25,10 +27,20 @@ target.coffee = ->
       bare: yes
 ```
 
-And you will probably run it like:
+Here's mine: https://github.com/jiyinyiyong/mk/blob/master/make.coffee
+
+Run it like this:
 
 ```bash
+chmod +x make.coffee
 ./make.coffee coffee
+```
+
+or like me:
+
+```bash
+alias mk='coffee make.coffee'
+mk coffee
 ```
 
 ### Other configurations
@@ -93,10 +105,7 @@ target.coffee = ->
 * `less`: compile LESS to CSS
 
 SourceMap is enabled by default, and here I have to use command line.
-
-And this is more like a bug.
-https://github.com/less/less.js/issues/1985
-
+Related to: https://github.com/less/less.js/issues/1985
 Anyway, `mission.less` needs to be updated in the future.
 
 * `rsync`: run Rsync with some default configs
@@ -110,6 +119,20 @@ Anyway, `mission.less` needs to be updated in the future.
 Asynchronous callings are hard to handle in ShellJS.
 In this angle, Grunt did a good job in sequencing tasks.
 
+But you can try `wait` to reduce the pain.
+`mission` would keep watching `.done` and run task when it's `true`.
+
+```coffee
+target.test = ->
+  a = done: no
+  mission.wait a, ->
+    console.log 'finish task'
+
+  setTimeout ->
+    a.done = yes
+  , 2000
+```
+
 ### Development
 
 Compile `*.coffee`:
@@ -117,6 +140,12 @@ Compile `*.coffee`:
 ```
 ./make.coffee compile
 ```
+
+### Changelog
+
+* `0.0.4`
+
+  * Added flexibility and some default options to `rsync`
 
 ### License
 
