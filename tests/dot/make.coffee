@@ -11,7 +11,6 @@ target.build = ->
     to: 'script/'
     dest: 'template.js'
     options:
-      base: 'src/script/views/'
       rename: (longPath) ->
         shorter = path.relative 'src/script/views', longPath
         shorter = shorter.replace(/\//g, '-').replace('-template', '')
