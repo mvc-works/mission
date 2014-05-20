@@ -86,7 +86,7 @@ target.coffee = ->
 
 * `uglify`: minify JavaScript code
 
-* `coffee`: compile CoffeeScript to JavaScript
+* `coffee`: compile CoffeeScript to JavaScript, with sourceMap support
 
 * `watch`: watch directories, callback `filename`s and `extname`s
 
@@ -142,6 +142,10 @@ Compile `*.coffee`:
 ```
 
 ### Changelog
+
+* `0.0.5`
+
+  * Added `sourceMap` support
 
 * `0.0.4`
 

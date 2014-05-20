@@ -11,3 +11,4 @@ target.compile = ->
     extname: '.js'
     options:
       bare: yes
+      sourceMap: yes
