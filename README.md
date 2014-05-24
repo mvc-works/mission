@@ -143,6 +143,9 @@ Compile `*.coffee`:
 
 ### Changelog
 
+* `0.0.6`
+  * Updated Cirru HTML to fix double quote in attributes
+
 * `0.0.5`
 
   * Added `sourceMap` support

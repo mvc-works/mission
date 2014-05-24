@@ -1,6 +1,6 @@
 {
   "name": "mission",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Common used tasks in Web development",
   "main": "lib/index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "chokidar": "~0.8.2",
-    "cirru-html": "~0.2.1",
+    "cirru-html": "~0.2.2",
     "clean-css": "~2.1.8",
     "coffee-script": "^1.7.1",
     "devtools-reloader-station": "0.0.4",
