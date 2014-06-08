@@ -114,6 +114,10 @@ Anyway, `mission.less` needs to be updated in the future.
 
 * `wait`: wait `chan.done = false` to be `true` and run task
 
+* `cirruHtml` compile Cirru HTML
+
+* `cirruHtmlJs` compile Cirru to template in JavaScript(not tested)
+
 ### Notice
 
 Asynchronous callings are hard to handle in ShellJS.
@@ -143,7 +147,12 @@ Compile `*.coffee`:
 
 ### Changelog
 
+* `0.0.7`
+
+  * Add `cirruHtmlJs` and rename `cirruHtml`
+
 * `0.0.6`
+
   * Updated Cirru HTML to fix double quote in attributes
 
 * `0.0.5`

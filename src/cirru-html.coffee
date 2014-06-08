@@ -14,8 +14,10 @@ setResolver (basePath, child, scope) ->
 
 exports.task = (opts) ->
   context = common.expand opts
+  data = context.data or {}
   for item in context.files
     name = item.from
-    html = render (cat name), '@filename': name
+    data['@filename'] = name
+    html = render (cat name), data
     common.write item.to, html
   console.log "done: converted Cirru files in #{context.from}"
