@@ -49,3 +49,6 @@ exports.copy = (args...) ->
 
 exports.wait = (args...) ->
   require('./wait').task args...
+
+pkg = require '../package.json'
+console.log "mission #{pkg.version}"
