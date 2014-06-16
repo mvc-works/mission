@@ -7,7 +7,8 @@ createFile = (base, data) ->
   for key, value of data
     dest = path.join base, key
     if typeof value is 'string'
-      value.to dest
+      unless test '-e', dest
+        value.to dest
     else if typeof value is 'object'
       mkdir '-p', dest
       createFile dest, value
