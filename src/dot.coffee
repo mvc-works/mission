@@ -1,5 +1,5 @@
 
-dot = require 'dot'
+dot = require 'dot-strip'
 path = require 'path'
 
 common = require './common'
