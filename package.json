@@ -1,6 +1,6 @@
 {
   "name": "mission",
-  "version": "0.0.7-6",
+  "version": "0.0.7-7",
   "description": "Common used tasks in Web development",
   "main": "lib/index.js",
   "scripts": {
@@ -16,6 +16,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "browserify": "^4.1.11",
     "chokidar": "~0.8.2",
     "cirru-html": "~0.2.2",
     "cirru-html-js": "0.0.7",
