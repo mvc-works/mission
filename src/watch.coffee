@@ -20,7 +20,10 @@ exports.task = (opts) ->
         context.trigger filepath, extname
 
     stable = no
-    setTimeout (-> stable = yes), 6000
+    setTimeout ->
+      stable = yes
+      console.log "done: activated reloading"
+    , 4000
 
     watcher.on 'change', trigger
     watcher.on 'add', (addPath) ->
