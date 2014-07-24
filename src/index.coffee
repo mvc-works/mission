@@ -5,6 +5,9 @@ exports.bump = (args...) ->
 exports.browserify = (args...) ->
   require('./browserify').task args...
 
+exports.browserifyVender = (args...) ->
+  require('./browserify-vender').task args...
+
 exports.cirruHtml = (args...) ->
   require('./cirru-html').task args...
 

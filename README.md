@@ -96,6 +96,8 @@ target.coffee = ->
 
 * `browserify`: combine JavaScript code on CommonJS
 
+* `browserifyVender`: helper for `browserify` to generate `vender.js`
+
 * `cssmin`: combine CSS files and minify code
 
 * `dot`: precompile dot files to JavaScript
@@ -146,6 +148,12 @@ Compile `*.coffee`:
 ```
 
 ### Changelog
+
+* `0.0.8`
+
+  * add `external` option for browserify
+
+  * add `browserifyVender` task for multiple bundling
 
 * `0.0.7`
 

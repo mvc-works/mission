@@ -3,17 +3,13 @@
   "file": "generated.js",
   "sources": [
     "/Users/chen/Work/oss/mission/node_modules/browserify/node_modules/browser-pack/_prelude.js",
-    "/Users/chen/Work/oss/mission/node_modules/browserify/lib/_empty.js",
-    "/Users/chen/Work/oss/mission/tests/browserify/js/app.js",
-    "/Users/chen/Work/oss/mission/tests/browserify/js/lib.js"
+    "/Users/chen/Work/oss/mission/tests/browserify-vender/js/a.js"
   ],
   "names": [],
-  "mappings": "AAAA;ACAA;;ACAA;AACA;AACA;AACA;AACA;;ACJA;AACA;AACA;AACA",
+  "mappings": "AAAA;;;ACAA;AACA;AACA;AACA",
   "sourcesContent": [
     "(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require==\"function\"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error(\"Cannot find module '\"+o+\"'\")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require==\"function\"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})",
-    null,
-    "\nlib = require('./lib')\nex = require('./ex')\n\nlib.print()",
-    "\nexports.print = function() {\n  console.log('this is lib')\n}"
+    "\nexports.action = function() {\n  console.log('a')\n}"
   ],
   "sourceRoot": ""
 }

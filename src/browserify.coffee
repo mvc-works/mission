@@ -9,6 +9,8 @@ common = require './common'
 
 exports.task = (opts) ->
   context = common.expand opts
+  {options} = context
+
   count = 0
   for item in context.files
     count += 1
@@ -17,8 +19,10 @@ exports.task = (opts) ->
       if (item.from[0] is '.') then item.from
       else "./#{item.from}"
 
-    bundle = browserify([entry]).bundle debug: yes
-    common.write item.to, ''
+    b = browserify([entry])
+    if options.external? then b.external(options.external)
+
+    bundle = b.bundle debug: yes
 
     bundle
     .pipe (exorcist "#{item.to}.map")
