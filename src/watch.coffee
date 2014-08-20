@@ -7,6 +7,12 @@ common = require './common'
 exports.task = (opts) ->
   context = common.expand opts
 
+  stable = no
+  setTimeout ->
+    stable = yes
+    console.log "done: activated reloading"
+  , 4000
+
   files = context.files
 
   files.forEach (item) ->
@@ -18,12 +24,6 @@ exports.task = (opts) ->
       if filepath?
         extname = path.extname filepath
         context.trigger filepath, extname
-
-    stable = no
-    setTimeout ->
-      stable = yes
-      console.log "done: activated reloading"
-    , 4000
 
     watcher.on 'change', trigger
     watcher.on 'add', (addPath) ->
