@@ -1,34 +1,25 @@
 
-chokidar = require 'chokidar'
 path = require 'path'
+gaze = require 'gaze'
 
 common = require './common'
 
 exports.task = (opts) ->
   context = common.expand opts
 
-  stable = no
-  setTimeout ->
-    stable = yes
-    console.log "done: activated reloading"
-  , 4000
-
   files = context.files
 
+  trigger = (filepath) ->
+    if filepath?
+      extname = path.extname filepath
+      context.trigger filepath, extname
+
   files.forEach (item) ->
-    watcher = chokidar.watch item.from,
-      ignored: /[\/\\]\./
-      persistent: true
-
-    trigger = (filepath) ->
-      if filepath?
-        extname = path.extname filepath
-        context.trigger filepath, extname
-
-    watcher.on 'change', trigger
-    watcher.on 'add', (addPath) ->
-      trigger addPath if stable
+    gaze item.from, (err, watcher) ->
+      @on 'changed', trigger
+      @on 'added', trigger
 
   fileFroms = files.map (item) ->
     item.from
+
   console.log "done: watching #{fileFroms.join(' ')}"

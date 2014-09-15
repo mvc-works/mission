@@ -5,6 +5,6 @@ mission = require '../../src/'
 
 target.watch = ->
   mission.watch
-    file: 'dir'
+    file: './dir/**/*'
     trigger: (filename, extname) ->
       console.log 'update:', filename, extname
